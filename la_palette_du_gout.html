@@ -3,14 +3,19 @@
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-            <link rel="stylesheet" media="screen and (max-width: 320px)" href="./css/style.css" />
+            <link rel="stylesheet" media="screen and (min-width: 320px)" href="style.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Shrikhand&display=swap" rel="stylesheet">
             <title>La palette du goût</title>
         </head>
 
         <body>
-            <header>
-                <div id="header__logo">
+            <header class="header">
+                <a class="header__back" href="index.html">
+                        <i class="fa-solid fa-arrow-left"></i>
+                </a>
+
+                <div class="header__logo">
                     <img src="maquettes/images/logo/ohmyfood.png" alt="ohmyfood" title="ohmyfood">
                 </div>
             </header>
@@ -100,26 +105,20 @@
                 <button class="btn">Commander</button>
             </section>
 
-            <footer>
-                <div id="footer__logo">
-                    <img src="maquettes/images/logo/ohmyfood.png" alt="ohmyfood" title="ohmyfood">
-                </div>
+            <footer class="footer">
+                <div class="footer__logo">ohmyfood</div>
 
-                <div class="footer-list">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-utensils"></i>
-                            <p>Proposer un restaurant</p>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-handshake-angle"></i>
-                            <p>Devenir partenaire</p>
-                        </li>
-                        <li>Mentions légales</li>
-                        <li>
-                            <a href="mailto:ohmyfood@food.com">Contact</a>
-                        </li>
-                    </ul>
+                <div class="footer__list">
+                    <div class="footer__list__row">
+                        <i class="fa-solid fa-utensils"></i>
+                        <div>Proposer un restaurant</div>
+                    </div>
+                    <div class="footer__list__row">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <div>Devenir partenaire</div>
+                    </div>
+                    <div>Mentions légales</div>
+                    <a href="mailto:ohmyfood@food.com">Contact</a> 
                 </div>
             </footer>
         </body>

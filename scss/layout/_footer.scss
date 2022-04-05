@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: $padding;
+    background-color: #303030;
+    color: white;
+    padding: $padding;
+    margin-top: $margin-top-footer;
+
+    &__logo {
+        font-family: $title-typo;
+        font-size: large;
+        padding-top: $padding-footer-logo;
+        padding-bottom: $padding-footer-logo;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        font-weight: bolder;
+
+        & a {
+            color: white;
+        }
+
+        &__row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & i {
+                padding-right: $padding;
+            }
+        }
+    }
+}
+
+.fa-utensils {
+    width: 20px;
+}

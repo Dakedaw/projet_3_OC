@@ -1,0 +1,100 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.header__logo {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__logo img {
+  width: 55%;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #DCDCDC;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: inset 0px 11px 8px -10px darkgray;
+}
+.form i {
+  display: flex;
+  justify-content: center;
+}
+.form__location {
+  width: 10%;
+}
+.form__search {
+  width: 40%;
+  border: none;
+  background-color: #DCDCDC;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  background-color: #303030;
+  color: white;
+  padding: 15px;
+  margin-top: 100px;
+}
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-weight: bolder;
+}
+.footer__list a {
+  color: white;
+}
+.footer__list__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__list__row i {
+  padding-right: 15px;
+}
+
+.fa-utensils {
+  width: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

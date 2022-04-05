@@ -1,0 +1,15 @@
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: $title-typo;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
