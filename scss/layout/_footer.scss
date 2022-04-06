@@ -6,13 +6,13 @@
     background-color: #303030;
     color: white;
     padding: $padding;
-    margin-top: $margin-top-footer;
+    margin-top: $section-margin;
 
     &__logo {
         font-family: $title-typo;
         font-size: large;
-        padding-top: $padding-footer-logo;
-        padding-bottom: $padding-footer-logo;
+        padding-top: $padding-top-bottom;
+        padding-bottom: $padding-top-bottom;
     }
 
     &__list {
