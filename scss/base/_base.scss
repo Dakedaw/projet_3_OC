@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+h1 {
+    font-family: $title-typo;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

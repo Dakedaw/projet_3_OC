@@ -1,0 +1,12 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./base/base";
+
+@import "./components/btn";
+
+@import "./layout/header";
+@import "./layout/form";
+@import "./layout/footer";
+
+@import "./pages/index"

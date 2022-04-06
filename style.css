@@ -1,0 +1,246 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  width: 50%;
+  height: 45px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.header__logo {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__logo img {
+  width: 55%;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #DCDCDC;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: inset 0px 11px 8px -10px darkgray;
+}
+.form i {
+  display: flex;
+  justify-content: center;
+}
+.form__location {
+  width: 10%;
+}
+.form__search {
+  width: 40%;
+  background-color: #DCDCDC;
+  font-weight: bolder;
+  font-size: 15px;
+  border: none;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  background-color: #303030;
+  color: white;
+  padding: 15px;
+  margin-top: 100px;
+}
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-weight: bolder;
+}
+.footer__list a {
+  color: white;
+}
+.footer__list__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__list__row i {
+  padding-right: 15px;
+}
+
+.fa-utensils {
+  width: 20px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.intro h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+  margin-bottom: 0;
+}
+.intro p {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.operation {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  margin-bottom: 100px;
+}
+.operation__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 45px;
+  column-gap: 20px;
+  box-shadow: 0 7px 10px -1px #DCDCDC;
+  border-radius: 40px;
+}
+.operation__card__number {
+  width: 6%;
+  background-color: #9356DC;
+  height: 17px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: x-small;
+  padding-top: 4px;
+  padding-left: 1px;
+}
+.operation__card__content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.operation__card__content i {
+  width: 21px;
+}
+.operation__card__content__grey {
+  color: gray;
+}
+.operation__card__content__purple {
+  color: #9356DC;
+}
+.operation__card__content p {
+  width: 100%;
+  margin: 0;
+  padding-left: 25px;
+  font-weight: bolder;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  margin-bottom: 100px;
+}
+.restaurant-list h2 {
+  margin-bottom: 0;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  row-gap: 125px;
+}
+.restaurant a {
+  height: 150px;
+}
+.restaurant__card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 10px -1px #DCDCDC;
+  border-radius: 30px;
+  padding-bottom: 20px;
+}
+.restaurant__card__container {
+  height: 170px;
+}
+.restaurant__card__container img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.restaurant__card__position {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.restaurant__card__position__text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+.restaurant__card__position__text h3 {
+  margin-bottom: 5px;
+}
+.restaurant__card__position__text p {
+  margin: 0;
+}
+.restaurant__card__position__like {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.restaurant__card__position__like i {
+  padding-top: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
