@@ -1,11 +1,16 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+
 $form-color: #DCDCDC;
+
+$btn-color: linear-gradient(to bottom right, $color-secondary, $color-primary);
+$heart-color: linear-gradient(to top right, $color-secondary, $color-primary);
 
 $title-typo: 'Shrikhand', cursive;
 
 $padding: 15px;
-
 $section-margin: 100px;
 $padding-top-bottom: 10px;
+
+$card-radius: 20px;

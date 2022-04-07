@@ -98,18 +98,31 @@
         display: flex;
         flex-direction: column;
         @include card-shadow;
-        border-radius: 30px;
+        border-radius: $card-radius;
         padding-bottom: 20px;
 
         &__container {
             height: 170px;
+            position: relative;
+            text-align: center;
+
+            & div {
+                position: absolute;
+                top: 13px;
+                right: 16px;
+                background-color: $color-tertiary;
+                width: 25%;
+                height: 25px;
+                padding-top: 7px;
+                color: darken($color: $color-tertiary, $amount: 45%);
+            }
 
             & img {
                 width: 100%;
                 max-height: 100%;
                 object-fit: cover;
-                border-top-left-radius: 30px;
-                border-top-right-radius: 30px;
+                border-top-left-radius: $card-radius;
+                border-top-right-radius: $card-radius;
             }
         }
 
@@ -117,6 +130,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            height: 65px;
 
             &__text {
                 display: flex;
@@ -138,8 +152,17 @@
                 align-items: center;
                 justify-content: center;
 
-                & i {
-                    padding-top: 20px;
+                & path {
+                    fill: transparent;
+                    stroke-width: 5px;
+                    stroke: #000;
+                }
+
+                &:hover {
+
+                    & path {
+                    animation: heart-fill 2s linear both;
+                    }
                 }
             }
         }
