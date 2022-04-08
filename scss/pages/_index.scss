@@ -156,12 +156,15 @@
                     fill: transparent;
                     stroke-width: 5px;
                     stroke: #000;
+                    stroke-dasharray: 280;
+                    stroke-dashoffset: 0;
+                    transform-origin: 0%;
                 }
 
-                &:hover {
+                &:active {
 
                     & path {
-                    animation: heart-fill 2s linear both;
+                    animation: heart-fill 500ms linear both;
                     }
                 }
             }

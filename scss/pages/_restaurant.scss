@@ -1,0 +1,121 @@
+.background-pic {
+    height: 250px;
+
+    & img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    width: 92%;
+    padding-right: 4%;
+    padding-left: 4%;
+    background-color: white;
+    margin-left: 0;
+    margin-right: 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+
+        & h1 {
+            font-size: 28px;
+            font-weight: lighter;
+            margin-top: 28px;
+        }
+
+        &__like {
+            width: 20%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & path {
+                fill: transparent;
+                stroke-width: 5px;
+                stroke: #000;
+                stroke-dasharray: 280;
+                stroke-dashoffset: 0;
+                transform-origin: 0%;
+            }
+
+            &:active {
+
+                & path {
+                animation: heart-fill 500ms linear both;
+                }
+            }
+        }
+    }
+
+    &__name {
+
+        &__starter {
+            width: 20%;
+            margin-top: 0;
+            margin-bottom: 40px;
+            @include h4-font;
+        }
+
+        &__dish {
+            width: 13%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            @include h4-font;
+        }
+
+        &__dessert {
+            width: 22%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            @include h4-font;
+        }
+
+        &__course {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            margin-bottom: 40px;
+
+            &__card {
+                @include card-shadow;
+
+                & h5 {
+                    margin: 0;
+                    font-size: 18px;
+                    @include text-ellipsis;
+                }
+
+                &__seasoning {
+                    display: flex;
+                    justify-content: space-between;
+
+                    & p {
+                        font-weight: 300;
+                        @include text-ellipsis;
+                    }
+    
+                    &__price span {
+                        font-weight: 600;
+                        margin-right: 10px;
+                        margin-top: 18px;
+                        margin-left: 30px;
+                        padding-right: 8px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-align {
+    display: flex;
+    justify-content: center;
+}
