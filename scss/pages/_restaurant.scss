@@ -45,10 +45,18 @@
                 transform-origin: 0%;
             }
 
-            &:active {
+            &:hover{
 
                 & path {
                 animation: heart-fill 500ms linear both;
+                cursor: pointer;
+                }
+            }
+
+            &:active {
+
+                & path {
+                    animation: heart-fill 500ms linear both;
                 }
             }
         }
@@ -59,55 +67,82 @@
         &__starter {
             width: 20%;
             margin-top: 0;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             @include h4-font;
         }
 
         &__dish {
             width: 13%;
             margin-top: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             @include h4-font;
         }
 
         &__dessert {
             width: 22%;
             margin-top: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             @include h4-font;
         }
 
         &__course {
             display: flex;
             flex-direction: column;
-            row-gap: 25px;
+            row-gap: 15px;
             margin-bottom: 40px;
 
             &__card {
                 @include card-shadow;
+                border-radius: $card-radius;
 
                 & h5 {
                     margin: 0;
                     font-size: 18px;
+                    padding-left: 10px;
+                    margin-top: 10px;
                     @include text-ellipsis;
                 }
+
+                /*&__box {
+                    width: 20%;
+                    height: 81px;
+                    background-color: $color-tertiary;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-top-right-radius: $card-radius;
+                    border-bottom-right-radius: $card-radius;
+                    margin-top: -32px;
+                    margin-right: -42px;
+                    margin-left: -40px;
+                }
+
+                & i {
+                    width: 50%;
+                    height: 50%;
+                }*/
 
                 &__seasoning {
                     display: flex;
                     justify-content: space-between;
+                    padding-left: 10px;
 
                     & p {
                         font-weight: 300;
                         @include text-ellipsis;
+                        margin-top: 8px;
                     }
     
-                    &__price span {
-                        font-weight: 600;
-                        margin-right: 10px;
-                        margin-top: 18px;
-                        margin-left: 30px;
-                        padding-right: 8px;
-                        font-size: 14px;
+                    &__price {
+                        
+                        & span {
+                            font-weight: 600;
+                            margin-right: 10px;
+                            margin-top: 18px;
+                            margin-left: 30px;
+                            padding-right: 8px;
+                            font-size: 14px;
+                        }                        
                     }
                 }
             }
@@ -115,7 +150,63 @@
     }
 }
 
+.fa-circle-check {
+    color: white;
+}
+
 .btn-align {
     display: flex;
     justify-content: center;
+}
+
+.one {
+    animation: menu-arrival 500ms $arrival-delay both cubic-bezier(.99,0,0,1);
+}
+
+.two {
+    animation: menu-arrival 500ms $arrival-delay*2 both cubic-bezier(.99,0,0,1);
+}
+
+.three {
+    animation: menu-arrival 500ms $arrival-delay*3 both cubic-bezier(.99,0,0,1);
+}
+
+.four {
+    animation: menu-arrival 500ms $arrival-delay*4 both cubic-bezier(.99,0,0,1);
+}
+
+.five {
+    animation: menu-arrival 500ms $arrival-delay*5 both cubic-bezier(.99,0,0,1);
+}
+
+.six {
+    animation: menu-arrival 500ms $arrival-delay*6 both cubic-bezier(.99,0,0,1);
+}
+
+.seven {
+    animation: menu-arrival 500ms $arrival-delay*7 both cubic-bezier(.99,0,0,1);
+}
+
+.eight {
+    animation: menu-arrival 500ms $arrival-delay*8 both cubic-bezier(.99,0,0,1);
+}
+
+.nine {
+    animation: menu-arrival 500ms $arrival-delay*9 both cubic-bezier(.99,0,0,1);
+}
+
+.ten {
+    animation: menu-arrival 500ms $arrival-delay*10 both cubic-bezier(.99,0,0,1);
+}
+
+.eleven {
+    animation: menu-arrival 500ms $arrival-delay*11 both cubic-bezier(.99,0,0,1);
+}
+
+.twelve {
+    animation: menu-arrival 500ms $arrival-delay*12 both cubic-bezier(.99,0,0,1);
+}
+
+.thirteen {
+    animation: menu-arrival 500ms $arrival-delay*13 both cubic-bezier(.99,0,0,1);
 }

@@ -2,38 +2,46 @@
   0% {
     transform: scaleY(0);
     opacity: 0;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   20% {
     transform: scaleY(0.2);
     opacity: 0.1;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   40% {
     transform: scaleY(0.4);
     opacity: 0.2;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   60% {
     transform: scaleY(0.6);
     opacity: 0.4;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   80% {
     transform: scaleY(0.8);
     opacity: 0.6;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   100% {
     transform: scaleY(1);
     opacity: 1;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
+  }
+}
+@keyframes menu-arrival {
+  0% {
+    transform: translateY(9999px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 body {
@@ -175,17 +183,18 @@ a {
 .operation {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 25px;
   margin-bottom: 80px;
 }
 .operation__card {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  height: 45px;
+  align-items: center;
+  height: 70px;
   column-gap: 20px;
-  box-shadow: 0 7px 10px -1px #DCDCDC;
-  border-radius: 40px;
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
+  border-radius: 20px;
 }
 .operation__card__number {
   width: 6%;
@@ -203,6 +212,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: 4px;
 }
 .operation__card__content i {
   width: 21px;
@@ -233,15 +243,12 @@ a {
 .restaurant {
   display: flex;
   flex-direction: column;
-  row-gap: 125px;
-}
-.restaurant a {
-  height: 150px;
+  row-gap: 25px;
 }
 .restaurant__card {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 7px 10px -1px #DCDCDC;
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
   padding-bottom: 20px;
 }
@@ -298,6 +305,9 @@ a {
   stroke-dashoffset: 0;
   transform-origin: 0%;
 }
+.restaurant__card__position__like:hover path {
+  animation: heart-fill 500ms linear both;
+}
 .restaurant__card__position__like:active path {
   animation: heart-fill 500ms linear both;
 }
@@ -346,13 +356,17 @@ a {
   stroke-dashoffset: 0;
   transform-origin: 0%;
 }
+.menu__title__like:hover path {
+  animation: heart-fill 500ms linear both;
+  cursor: pointer;
+}
 .menu__title__like:active path {
   animation: heart-fill 500ms linear both;
 }
 .menu__name__starter {
   width: 20%;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: lighter;
   border-bottom: 3px solid #99E2D0;
@@ -361,7 +375,7 @@ a {
 .menu__name__dish {
   width: 13%;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: lighter;
   border-bottom: 3px solid #99E2D0;
@@ -370,7 +384,7 @@ a {
 .menu__name__dessert {
   width: 22%;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: lighter;
   border-bottom: 3px solid #99E2D0;
@@ -379,15 +393,36 @@ a {
 .menu__name__course {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: 15px;
   margin-bottom: 40px;
 }
 .menu__name__course__card {
-  box-shadow: 0 7px 10px -1px #DCDCDC;
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
+  border-radius: 20px;
+  /*&__box {
+      width: 20%;
+      height: 81px;
+      background-color: $color-tertiary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-right-radius: $card-radius;
+      border-bottom-right-radius: $card-radius;
+      margin-top: -32px;
+      margin-right: -42px;
+      margin-left: -40px;
+  }
+
+  & i {
+      width: 50%;
+      height: 50%;
+  }*/
 }
 .menu__name__course__card h5 {
   margin: 0;
   font-size: 18px;
+  padding-left: 10px;
+  margin-top: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -395,12 +430,14 @@ a {
 .menu__name__course__card__seasoning {
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
 }
 .menu__name__course__card__seasoning p {
   font-weight: 300;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-top: 8px;
 }
 .menu__name__course__card__seasoning__price span {
   font-weight: 600;
@@ -411,9 +448,65 @@ a {
   font-size: 14px;
 }
 
+.fa-circle-check {
+  color: white;
+}
+
 .btn-align {
   display: flex;
   justify-content: center;
+}
+
+.one {
+  animation: menu-arrival 500ms 200ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.two {
+  animation: menu-arrival 500ms 400ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.three {
+  animation: menu-arrival 500ms 600ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.four {
+  animation: menu-arrival 500ms 800ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.five {
+  animation: menu-arrival 500ms 1000ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.six {
+  animation: menu-arrival 500ms 1200ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.seven {
+  animation: menu-arrival 500ms 1400ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.eight {
+  animation: menu-arrival 500ms 1600ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.nine {
+  animation: menu-arrival 500ms 1800ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.ten {
+  animation: menu-arrival 500ms 2000ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.eleven {
+  animation: menu-arrival 500ms 2200ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.twelve {
+  animation: menu-arrival 500ms 2400ms both cubic-bezier(0.99, 0, 0, 1);
+}
+
+.thirteen {
+  animation: menu-arrival 500ms 2600ms both cubic-bezier(0.99, 0, 0, 1);
 }
 
 /*# sourceMappingURL=style.css.map */

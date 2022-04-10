@@ -1,5 +1,5 @@
 @mixin card-shadow {
-    box-shadow: 0 7px 10px -1px $form-color;
+    box-shadow: 7px 7px 10px -1px $form-color, -7px 0 10px 1px $form-color;
 }
 
 @mixin h4-font {

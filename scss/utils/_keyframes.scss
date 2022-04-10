@@ -3,42 +3,53 @@
     0% {
       transform: scaleY(0);
       opacity: 0;
-      fill: #9356DC;
-      stroke: #9356DC;
+      fill: url(#heart-gradient);
+      stroke: transparent;
     }
 
     20% {
         transform: scaleY(.2);
         opacity: .1;
-        fill: #9356DC;
-        stroke: #9356DC;
+        fill: url(#heart-gradient);
+        stroke: transparent;
       }
 
     40% {
       transform: scaleY(.4);
       opacity: .2;
-      fill: #9356DC;
-      stroke: #9356DC;
+      fill: url(#heart-gradient);
+      stroke: transparent;
     }
 
     60% {
         transform: scaleY(.6);
         opacity: .4;
-        fill: #9356DC;
-        stroke: #9356DC;
+        fill: url(#heart-gradient);
+        stroke: transparent;
       }
 
     80% {
       transform: scaleY(.8);
       opacity: .6;
-      fill: #9356DC;
-      stroke: #9356DC;
+      fill: url(#heart-gradient);
+      stroke: transparent;
     }
 
     100% {
       transform: scaleY(1);
       opacity: 1;
-      fill: #9356DC;
-      stroke: #9356DC;
+      fill: url(#heart-gradient);
+      stroke: transparent;
     }
   }
+
+@keyframes menu-arrival {
+
+  0% {
+    transform: translateY(9999px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
