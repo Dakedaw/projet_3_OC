@@ -1,35 +1,11 @@
 @keyframes heart-fill {
-  0% {
+  from {
     transform: scaleY(0);
     opacity: 0;
     fill: url(#heart-gradient);
     stroke: transparent;
   }
-  20% {
-    transform: scaleY(0.2);
-    opacity: 0.1;
-    fill: url(#heart-gradient);
-    stroke: transparent;
-  }
-  40% {
-    transform: scaleY(0.4);
-    opacity: 0.2;
-    fill: url(#heart-gradient);
-    stroke: transparent;
-  }
-  60% {
-    transform: scaleY(0.6);
-    opacity: 0.4;
-    fill: url(#heart-gradient);
-    stroke: transparent;
-  }
-  80% {
-    transform: scaleY(0.8);
-    opacity: 0.6;
-    fill: url(#heart-gradient);
-    stroke: transparent;
-  }
-  100% {
+  to {
     transform: scaleY(1);
     opacity: 1;
     fill: url(#heart-gradient);
@@ -37,11 +13,35 @@
   }
 }
 @keyframes menu-arrival {
-  0% {
-    transform: translateY(9999px);
+  from {
+    opacity: 0;
   }
-  100% {
-    transform: translateY(0);
+  to {
+    opacity: 1;
+  }
+}
+@keyframes box-translate {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes price-translate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-75px);
+  }
+}
+@keyframes icon-rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 body {
@@ -76,6 +76,10 @@ a {
   border: none;
   color: white;
   cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(356deg, #a16be0 0%, #ff93e1 100%);
+  box-shadow: 0px 2px 10px 0px #525252;
 }
 
 .header {
@@ -399,30 +403,24 @@ a {
 .menu__name__course__card {
   box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
-  /*&__box {
-      width: 20%;
-      height: 81px;
-      background-color: $color-tertiary;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top-right-radius: $card-radius;
-      border-bottom-right-radius: $card-radius;
-      margin-top: -32px;
-      margin-right: -42px;
-      margin-left: -40px;
-  }
-
-  & i {
-      width: 50%;
-      height: 50%;
-  }*/
+  position: relative;
+  cursor: pointer;
+}
+.menu__name__course__card:hover .price {
+  animation: price-translate 500ms both;
+}
+.menu__name__course__card:hover + .check-box {
+  animation: box-translate 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform-origin: right;
+}
+.menu__name__course__card:hover + .check-box i {
+  animation: icon-rotate 500ms;
 }
 .menu__name__course__card h5 {
   margin: 0;
   font-size: 18px;
   padding-left: 10px;
-  margin-top: 10px;
+  padding-top: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -448,6 +446,25 @@ a {
   font-size: 14px;
 }
 
+.check-box {
+  width: 17%;
+  height: 76px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  margin-top: -76px;
+  right: 14px;
+  transform: translateX(100px);
+  overflow: hidden;
+}
+.check-box i {
+  font-size: x-large;
+}
+
 .fa-circle-check {
   color: white;
 }
@@ -458,55 +475,55 @@ a {
 }
 
 .one {
-  animation: menu-arrival 500ms 200ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 200ms both;
 }
 
 .two {
-  animation: menu-arrival 500ms 400ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 400ms both;
 }
 
 .three {
-  animation: menu-arrival 500ms 600ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 600ms both;
 }
 
 .four {
-  animation: menu-arrival 500ms 800ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 800ms both;
 }
 
 .five {
-  animation: menu-arrival 500ms 1000ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 1000ms both;
 }
 
 .six {
-  animation: menu-arrival 500ms 1200ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 1200ms both;
 }
 
 .seven {
-  animation: menu-arrival 500ms 1400ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 1400ms both;
 }
 
 .eight {
-  animation: menu-arrival 500ms 1600ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 1600ms both;
 }
 
 .nine {
-  animation: menu-arrival 500ms 1800ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 1800ms both;
 }
 
 .ten {
-  animation: menu-arrival 500ms 2000ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 2000ms both;
 }
 
 .eleven {
-  animation: menu-arrival 500ms 2200ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 2200ms both;
 }
 
 .twelve {
-  animation: menu-arrival 500ms 2400ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 2400ms both;
 }
 
 .thirteen {
-  animation: menu-arrival 500ms 2600ms both cubic-bezier(0.99, 0, 0, 1);
+  animation: menu-arrival 500ms 2600ms both;
 }
 
 /*# sourceMappingURL=style.css.map */

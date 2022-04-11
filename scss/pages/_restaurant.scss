@@ -94,33 +94,29 @@
             &__card {
                 @include card-shadow;
                 border-radius: $card-radius;
+                position: relative;
+                cursor: pointer;
+
+                &:hover .price {
+                    animation: price-translate 500ms both;
+                }
+
+                &:hover + .check-box {
+                    animation: box-translate 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    transform-origin: right;
+
+                    & i {
+                        animation: icon-rotate 500ms;
+                    }
+                }
 
                 & h5 {
                     margin: 0;
                     font-size: 18px;
                     padding-left: 10px;
-                    margin-top: 10px;
+                    padding-top: 10px;
                     @include text-ellipsis;
                 }
-
-                /*&__box {
-                    width: 20%;
-                    height: 81px;
-                    background-color: $color-tertiary;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-top-right-radius: $card-radius;
-                    border-bottom-right-radius: $card-radius;
-                    margin-top: -32px;
-                    margin-right: -42px;
-                    margin-left: -40px;
-                }
-
-                & i {
-                    width: 50%;
-                    height: 50%;
-                }*/
 
                 &__seasoning {
                     display: flex;
@@ -150,6 +146,26 @@
     }
 }
 
+.check-box {
+    width: 17%;
+    height: 76px;
+    background-color: $color-tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: $card-radius;
+    border-bottom-right-radius: $card-radius;
+    position: absolute;
+    margin-top: -76px;
+    right: 14px;
+    transform: translateX(100px);
+    overflow: hidden;
+
+    & i {
+        font-size: x-large;
+    }
+}
+
 .fa-circle-check {
     color: white;
 }
@@ -160,53 +176,53 @@
 }
 
 .one {
-    animation: menu-arrival 500ms $arrival-delay both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay both;
 }
 
 .two {
-    animation: menu-arrival 500ms $arrival-delay*2 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*2 both;
 }
 
 .three {
-    animation: menu-arrival 500ms $arrival-delay*3 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*3 both;
 }
 
 .four {
-    animation: menu-arrival 500ms $arrival-delay*4 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*4 both;
 }
 
 .five {
-    animation: menu-arrival 500ms $arrival-delay*5 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*5 both;
 }
 
 .six {
-    animation: menu-arrival 500ms $arrival-delay*6 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*6 both;
 }
 
 .seven {
-    animation: menu-arrival 500ms $arrival-delay*7 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*7 both;
 }
 
 .eight {
-    animation: menu-arrival 500ms $arrival-delay*8 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*8 both;
 }
 
 .nine {
-    animation: menu-arrival 500ms $arrival-delay*9 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*9 both;
 }
 
 .ten {
-    animation: menu-arrival 500ms $arrival-delay*10 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*10 both;
 }
 
 .eleven {
-    animation: menu-arrival 500ms $arrival-delay*11 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*11 both;
 }
 
 .twelve {
-    animation: menu-arrival 500ms $arrival-delay*12 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*12 both;
 }
 
 .thirteen {
-    animation: menu-arrival 500ms $arrival-delay*13 both cubic-bezier(.99,0,0,1);
+    animation: menu-arrival 500ms $arrival-delay*13 both;
 }

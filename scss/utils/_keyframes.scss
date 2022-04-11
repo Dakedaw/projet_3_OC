@@ -1,41 +1,13 @@
 @keyframes heart-fill {
 
-    0% {
+    from {
       transform: scaleY(0);
       opacity: 0;
       fill: url(#heart-gradient);
       stroke: transparent;
     }
 
-    20% {
-        transform: scaleY(.2);
-        opacity: .1;
-        fill: url(#heart-gradient);
-        stroke: transparent;
-      }
-
-    40% {
-      transform: scaleY(.4);
-      opacity: .2;
-      fill: url(#heart-gradient);
-      stroke: transparent;
-    }
-
-    60% {
-        transform: scaleY(.6);
-        opacity: .4;
-        fill: url(#heart-gradient);
-        stroke: transparent;
-      }
-
-    80% {
-      transform: scaleY(.8);
-      opacity: .6;
-      fill: url(#heart-gradient);
-      stroke: transparent;
-    }
-
-    100% {
+    to {
       transform: scaleY(1);
       opacity: 1;
       fill: url(#heart-gradient);
@@ -45,11 +17,44 @@
 
 @keyframes menu-arrival {
 
-  0% {
-    transform: translateY(9999px);
+  from {
+    opacity: 0;
   }
 
-  100% {
-    transform: translateY(0);
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes box-translate {
+
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes price-translate {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-75px);
+  }
+}
+
+@keyframes icon-rotate {
+
+  from {
+    transform: rotate(-360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
   }
 }

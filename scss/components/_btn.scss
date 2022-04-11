@@ -6,4 +6,9 @@
     border: none;
     color: white;
     cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(356deg, lighten($color-primary, 5%) 0%, lighten($color-secondary, 5%) 100%);
+        box-shadow: 0px 2px 10px 0px #525252;
+      }
 }
