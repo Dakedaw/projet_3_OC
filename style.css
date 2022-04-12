@@ -406,6 +406,9 @@ a {
   position: relative;
   cursor: pointer;
 }
+.menu__name__course__card:hover .seasoning p {
+  width: 60%;
+}
 .menu__name__course__card:hover .price {
   animation: price-translate 500ms both;
 }
@@ -437,11 +440,12 @@ a {
   white-space: nowrap;
   margin-top: 8px;
 }
+.menu__name__course__card__seasoning__price {
+  margin-top: 8px;
+}
 .menu__name__course__card__seasoning__price span {
   font-weight: 600;
   margin-right: 10px;
-  margin-top: 18px;
-  margin-left: 30px;
   padding-right: 8px;
   font-size: 14px;
 }
@@ -459,7 +463,6 @@ a {
   margin-top: -76px;
   right: 14px;
   transform: translateX(100px);
-  overflow: hidden;
 }
 .check-box i {
   font-size: x-large;

@@ -97,6 +97,10 @@
                 position: relative;
                 cursor: pointer;
 
+                &:hover .seasoning p {
+                    width: 60%;
+                }
+
                 &:hover .price {
                     animation: price-translate 500ms both;
                 }
@@ -130,12 +134,11 @@
                     }
     
                     &__price {
-                        
+                        margin-top: 8px;
+
                         & span {
                             font-weight: 600;
                             margin-right: 10px;
-                            margin-top: 18px;
-                            margin-left: 30px;
                             padding-right: 8px;
                             font-size: 14px;
                         }                        
@@ -159,7 +162,6 @@
     margin-top: -76px;
     right: 14px;
     transform: translateX(100px);
-    overflow: hidden;
 
     & i {
         font-size: x-large;
