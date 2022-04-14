@@ -1,0 +1,27 @@
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    border-bottom: 16px solid $color-secondary;
+    animation: spin 2000ms linear both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+        animation: icon 2000ms linear both;
+        width: 40%;
+        height: 40%;
+        
+        & path {
+            fill: $color-tertiary;
+        }
+    }
+}

@@ -94,8 +94,8 @@
             &__card {
                 @include card-shadow;
                 border-radius: $card-radius;
-                position: relative;
                 cursor: pointer;
+                overflow: hidden;
 
                 &:hover .seasoning p {
                     width: 60%;
@@ -158,10 +158,7 @@
     align-items: center;
     border-top-right-radius: $card-radius;
     border-bottom-right-radius: $card-radius;
-    position: absolute;
-    margin-top: -76px;
-    right: 14px;
-    transform: translateX(100px);
+    margin-top: -33px;
 
     & i {
         font-size: x-large;

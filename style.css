@@ -12,35 +12,75 @@
     stroke: transparent;
   }
 }
-@keyframes menu-arrival {
-  from {
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
     opacity: 0;
   }
-  to {
+}
+@keyframes icon {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+}
+@keyframes page-arrival {
+  0% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes menu-arrival {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
 @keyframes box-translate {
-  from {
-    transform: scaleX(0);
+  0% {
+    transform: translateX(436px);
   }
-  to {
-    transform: scaleX(1);
+  100% {
+    transform: translateX(336px);
   }
 }
 @keyframes price-translate {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-75px);
   }
 }
 @keyframes icon-rotate {
-  from {
+  0% {
     transform: rotate(-360deg);
   }
-  to {
+  100% {
     transform: rotate(0deg);
   }
 }
@@ -80,6 +120,32 @@ a {
 .btn:hover {
   background: linear-gradient(356deg, #a16be0 0%, #ff93e1 100%);
   box-shadow: 0px 2px 10px 0px #525252;
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9356DC;
+  border-bottom: 16px solid #FF79DA;
+  animation: spin 2000ms linear both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader svg {
+  animation: icon 2000ms linear both;
+  width: 40%;
+  height: 40%;
+}
+.loader svg path {
+  fill: #99E2D0;
 }
 
 .header {
@@ -163,6 +229,10 @@ a {
 
 .fa-utensils {
   width: 20px;
+}
+
+#page {
+  animation: page-arrival 2200ms ease-out backwards;
 }
 
 .intro {
@@ -403,8 +473,8 @@ a {
 .menu__name__course__card {
   box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
-  position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 .menu__name__course__card:hover .seasoning p {
   width: 60%;
@@ -459,10 +529,7 @@ a {
   align-items: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  position: absolute;
-  margin-top: -76px;
-  right: 14px;
-  transform: translateX(100px);
+  margin-top: -33px;
 }
 .check-box i {
   font-size: x-large;
