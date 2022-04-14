@@ -1,3 +1,7 @@
+#page {
+    animation: page-arrival 2200ms ease-out backwards;
+}
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -22,17 +26,18 @@
 .operation {
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 25px;
     margin-bottom: $section-margin;
 
     &__card {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        height: 45px;
+        align-items: center;
+        height: 70px;
         column-gap: 20px;
         @include card-shadow;
-        border-radius: 40px;      
+        border-radius: $card-radius;
 
         &__number {
             width: 6%;
@@ -51,6 +56,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            padding-top: 4px;
 
             & i {
                 width: 21px;
@@ -88,11 +94,7 @@
 .restaurant {
     display: flex;
     flex-direction: column;
-    row-gap: 125px;
-
-    & a {
-        height: 150px;
-    }
+    row-gap: 25px;
 
     &__card {
         display: flex;
@@ -156,12 +158,22 @@
                     fill: transparent;
                     stroke-width: 5px;
                     stroke: #000;
+                    stroke-dasharray: 280;
+                    stroke-dashoffset: 0;
+                    transform-origin: 0%;
                 }
 
                 &:hover {
 
                     & path {
-                    animation: heart-fill 2s linear both;
+                    animation: heart-fill 500ms linear both;
+                    }
+                }
+
+                &:active {
+
+                    & path {
+                        animation: heart-fill 500ms linear both;
                     }
                 }
             }

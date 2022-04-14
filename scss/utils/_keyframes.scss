@@ -1,44 +1,113 @@
 @keyframes heart-fill {
 
-    0% {
-      transform: scaleY(0);
-      opacity: 0;
-      fill: #9356DC;
-      stroke: #9356DC;
-    }
-
-    20% {
-        transform: scaleY(.2);
-        opacity: 0;
-        fill: #9356DC;
-        stroke: #9356DC;
-      }
-
-    40% {
-      transform: scaleY(.4);
-      opacity: .2;
-      fill: #9356DC;
-      stroke: #9356DC;
-    }
-
-    60% {
-        transform: scaleY(.6);
-        opacity: .4;
-        fill: #9356DC;
-        stroke: #9356DC;
-      }
-
-    80% {
-      transform: scaleY(.8);
-      opacity: .6;
-      fill: #9356DC;
-      stroke: #9356DC;
-    }
-
-    100% {
-      transform: scaleY(1);
-      opacity: 1;
-      fill: #9356DC;
-      stroke: #9356DC;
-    }
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
+
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+    fill: url(#heart-gradient);
+    stroke: transparent;
+  }
+}
+
+@keyframes spin {
+
+  0% { 
+    transform: rotate(0deg);
+  }
+
+  90% { 
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes icon {
+
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  30% { 
+    opacity: 1;
+  }
+
+  70% { 
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes page-arrival {
+
+  0% { 
+    opacity: .1;
+  }
+
+  90% { 
+    opacity: .1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-arrival {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes box-translate {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes price-translate {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-75px);
+  }
+}
+
+@keyframes icon-rotate {
+
+  0% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

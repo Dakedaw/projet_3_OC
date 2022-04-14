@@ -2,38 +2,86 @@
   0% {
     transform: scaleY(0);
     opacity: 0;
-    fill: #9356DC;
-    stroke: #9356DC;
-  }
-  20% {
-    transform: scaleY(0.2);
-    opacity: 0;
-    fill: #9356DC;
-    stroke: #9356DC;
-  }
-  40% {
-    transform: scaleY(0.4);
-    opacity: 0.2;
-    fill: #9356DC;
-    stroke: #9356DC;
-  }
-  60% {
-    transform: scaleY(0.6);
-    opacity: 0.4;
-    fill: #9356DC;
-    stroke: #9356DC;
-  }
-  80% {
-    transform: scaleY(0.8);
-    opacity: 0.6;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
   100% {
     transform: scaleY(1);
     opacity: 1;
-    fill: #9356DC;
-    stroke: #9356DC;
+    fill: url(#heart-gradient);
+    stroke: transparent;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes icon {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+}
+@keyframes page-arrival {
+  0% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes menu-arrival {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes box-translate {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes price-translate {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-75px);
+  }
+}
+@keyframes icon-rotate {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 body {
@@ -68,6 +116,36 @@ a {
   border: none;
   color: white;
   cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(356deg, #a16be0 0%, #ff93e1 100%);
+  box-shadow: 0px 2px 10px 0px #525252;
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9356DC;
+  border-bottom: 16px solid #FF79DA;
+  animation: spin 2000ms linear both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader svg {
+  animation: icon 2000ms linear both;
+  width: 40%;
+  height: 40%;
+}
+.loader svg path {
+  fill: #99E2D0;
 }
 
 .header {
@@ -123,7 +201,7 @@ a {
   background-color: #303030;
   color: white;
   padding: 15px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .footer__logo {
   font-family: "Shrikhand", cursive;
@@ -153,6 +231,10 @@ a {
   width: 20px;
 }
 
+#page {
+  animation: page-arrival 2200ms ease-out backwards;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -175,17 +257,18 @@ a {
 .operation {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
-  margin-bottom: 100px;
+  row-gap: 25px;
+  margin-bottom: 80px;
 }
 .operation__card {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  height: 45px;
+  align-items: center;
+  height: 70px;
   column-gap: 20px;
-  box-shadow: 0 7px 10px -1px #DCDCDC;
-  border-radius: 40px;
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
+  border-radius: 20px;
 }
 .operation__card__number {
   width: 6%;
@@ -203,6 +286,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: 4px;
 }
 .operation__card__content i {
   width: 21px;
@@ -224,7 +308,7 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 .restaurant-list h2 {
   margin-bottom: 0;
@@ -233,15 +317,12 @@ a {
 .restaurant {
   display: flex;
   flex-direction: column;
-  row-gap: 125px;
-}
-.restaurant a {
-  height: 150px;
+  row-gap: 25px;
 }
 .restaurant__card {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 7px 10px -1px #DCDCDC;
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
   padding-bottom: 20px;
 }
@@ -294,9 +375,227 @@ a {
   fill: transparent;
   stroke-width: 5px;
   stroke: #000;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  transform-origin: 0%;
 }
 .restaurant__card__position__like:hover path {
-  animation: heart-fill 2s linear both;
+  animation: heart-fill 500ms linear both;
+}
+.restaurant__card__position__like:active path {
+  animation: heart-fill 500ms linear both;
+}
+
+.background-pic {
+  height: 250px;
+}
+.background-pic img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  width: 92%;
+  padding-right: 4%;
+  padding-left: 4%;
+  background-color: white;
+  margin-left: 0;
+  margin-right: 0;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -40px;
+}
+.menu__title {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__title h1 {
+  font-size: 28px;
+  font-weight: lighter;
+  margin-top: 28px;
+}
+.menu__title__like {
+  width: 20%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__title__like path {
+  fill: transparent;
+  stroke-width: 5px;
+  stroke: #000;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  transform-origin: 0%;
+}
+.menu__title__like:hover path {
+  animation: heart-fill 500ms linear both;
+  cursor: pointer;
+}
+.menu__title__like:active path {
+  animation: heart-fill 500ms linear both;
+}
+.menu__name__starter {
+  width: 20%;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+}
+.menu__name__dish {
+  width: 13%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+}
+.menu__name__dessert {
+  width: 22%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+}
+.menu__name__course {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-bottom: 40px;
+}
+.menu__name__course__card {
+  box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.menu__name__course__card:hover .seasoning p {
+  width: 60%;
+}
+.menu__name__course__card:hover .price {
+  animation: price-translate 500ms both;
+}
+.menu__name__course__card:hover + .check-box {
+  animation: box-translate 500ms both;
+  transform-origin: right;
+}
+.menu__name__course__card:hover + .check-box i {
+  animation: icon-rotate 500ms;
+}
+.menu__name__course__card h5 {
+  margin: 0;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__name__course__card__seasoning {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.menu__name__course__card__seasoning p {
+  font-weight: 300;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+.menu__name__course__card__seasoning__price {
+  margin-top: 8px;
+}
+.menu__name__course__card__seasoning__price span {
+  font-weight: 600;
+  margin-right: 10px;
+  padding-right: 8px;
+  font-size: 14px;
+}
+
+.check-box {
+  width: 17%;
+  height: 76px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: -75px;
+  margin-left: 335px;
+  transform: translateX(9999px);
+}
+.check-box i {
+  font-size: x-large;
+}
+
+.fa-circle-check {
+  color: white;
+}
+
+.btn-align {
+  display: flex;
+  justify-content: center;
+}
+
+.one {
+  animation: menu-arrival 500ms 200ms both;
+}
+
+.two {
+  animation: menu-arrival 500ms 400ms both;
+}
+
+.three {
+  animation: menu-arrival 500ms 600ms both;
+}
+
+.four {
+  animation: menu-arrival 500ms 800ms both;
+}
+
+.five {
+  animation: menu-arrival 500ms 1000ms both;
+}
+
+.six {
+  animation: menu-arrival 500ms 1200ms both;
+}
+
+.seven {
+  animation: menu-arrival 500ms 1400ms both;
+}
+
+.eight {
+  animation: menu-arrival 500ms 1600ms both;
+}
+
+.nine {
+  animation: menu-arrival 500ms 1800ms both;
+}
+
+.ten {
+  animation: menu-arrival 500ms 2000ms both;
+}
+
+.eleven {
+  animation: menu-arrival 500ms 2200ms both;
+}
+
+.twelve {
+  animation: menu-arrival 500ms 2400ms both;
+}
+
+.thirteen {
+  animation: menu-arrival 500ms 2600ms both;
 }
 
 /*# sourceMappingURL=style.css.map */

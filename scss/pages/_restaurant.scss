@@ -1,0 +1,229 @@
+.background-pic {
+    height: 250px;
+
+    & img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    width: 92%;
+    padding-right: 4%;
+    padding-left: 4%;
+    background-color: white;
+    margin-left: 0;
+    margin-right: 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+
+        & h1 {
+            font-size: 28px;
+            font-weight: lighter;
+            margin-top: 28px;
+        }
+
+        &__like {
+            width: 20%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & path {
+                fill: transparent;
+                stroke-width: 5px;
+                stroke: #000;
+                stroke-dasharray: 280;
+                stroke-dashoffset: 0;
+                transform-origin: 0%;
+            }
+
+            &:hover{
+
+                & path {
+                animation: heart-fill 500ms linear both;
+                cursor: pointer;
+                }
+            }
+
+            &:active {
+
+                & path {
+                    animation: heart-fill 500ms linear both;
+                }
+            }
+        }
+    }
+
+    &__name {
+
+        &__starter {
+            width: 20%;
+            margin-top: 0;
+            margin-bottom: 20px;
+            @include h4-font;
+        }
+
+        &__dish {
+            width: 13%;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            @include h4-font;
+        }
+
+        &__dessert {
+            width: 22%;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            @include h4-font;
+        }
+
+        &__course {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            margin-bottom: 40px;
+
+            &__card {
+                @include card-shadow;
+                border-radius: $card-radius;
+                cursor: pointer;
+                position: relative;
+
+                &:hover .seasoning p {
+                    width: 60%;
+                }
+
+                &:hover .price {
+                    animation: price-translate 500ms both;
+                }
+
+                &:hover + .check-box {
+                    animation: box-translate 500ms both;
+                    transform-origin: right;
+
+                    & i {
+                        animation: icon-rotate 500ms;
+                    }
+                }
+
+                & h5 {
+                    margin: 0;
+                    font-size: 18px;
+                    padding-left: 10px;
+                    padding-top: 10px;
+                    @include text-ellipsis;
+                }
+
+                &__seasoning {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 10px;
+
+                    & p {
+                        font-weight: 300;
+                        @include text-ellipsis;
+                        margin-top: 8px;
+                    }
+    
+                    &__price {
+                        margin-top: 8px;
+
+                        & span {
+                            font-weight: 600;
+                            margin-right: 10px;
+                            padding-right: 8px;
+                            font-size: 14px;
+                        }                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.check-box {
+    width: 17%;
+    height: 76px;
+    background-color: $color-tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: $card-radius;
+    border-bottom-right-radius: $card-radius;
+    margin-top: -75px;
+    margin-left: 335px;
+    transform: translateX(9999px);
+
+    & i {
+        font-size: x-large;
+    }
+}
+
+.fa-circle-check {
+    color: white;
+}
+
+.btn-align {
+    display: flex;
+    justify-content: center;
+}
+
+.one {
+    animation: menu-arrival 500ms $arrival-delay both;
+}
+
+.two {
+    animation: menu-arrival 500ms $arrival-delay*2 both;
+}
+
+.three {
+    animation: menu-arrival 500ms $arrival-delay*3 both;
+}
+
+.four {
+    animation: menu-arrival 500ms $arrival-delay*4 both;
+}
+
+.five {
+    animation: menu-arrival 500ms $arrival-delay*5 both;
+}
+
+.six {
+    animation: menu-arrival 500ms $arrival-delay*6 both;
+}
+
+.seven {
+    animation: menu-arrival 500ms $arrival-delay*7 both;
+}
+
+.eight {
+    animation: menu-arrival 500ms $arrival-delay*8 both;
+}
+
+.nine {
+    animation: menu-arrival 500ms $arrival-delay*9 both;
+}
+
+.ten {
+    animation: menu-arrival 500ms $arrival-delay*10 both;
+}
+
+.eleven {
+    animation: menu-arrival 500ms $arrival-delay*11 both;
+}
+
+.twelve {
+    animation: menu-arrival 500ms $arrival-delay*12 both;
+}
+
+.thirteen {
+    animation: menu-arrival 500ms $arrival-delay*13 both;
+}

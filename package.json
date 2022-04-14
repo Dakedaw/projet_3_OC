@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Dakedaw/projet_3_OC/issues"
   },
-  "homepage": "https://github.com/Dakedaw/projet_3_OC#readme"
+  "homepage": "https://github.com/Dakedaw/projet_3_OC#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
 }
