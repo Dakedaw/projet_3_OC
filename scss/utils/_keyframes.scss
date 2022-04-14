@@ -1,72 +1,72 @@
 @keyframes heart-fill {
 
-    from {
-      transform: scaleY(0);
-      opacity: 0;
-      fill: url(#heart-gradient);
-      stroke: transparent;
-    }
-
-    to {
-      transform: scaleY(1);
-      opacity: 1;
-      fill: url(#heart-gradient);
-      stroke: transparent;
-    }
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+    fill: url(#heart-gradient);
+    stroke: transparent;
   }
 
-  @keyframes spin {
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+    fill: url(#heart-gradient);
+    stroke: transparent;
+  }
+}
 
-    0% { 
-      transform: rotate(0deg);
-    }
+@keyframes spin {
 
-    90% { 
-      opacity: 1;
-    }
-
-    100% {
-      transform: rotate(360deg);
-      opacity: 0;
-    }
+  0% { 
+    transform: rotate(0deg);
   }
 
-  @keyframes icon {
-
-    0% {
-      transform: rotate(0deg);
-      opacity: 0;
-    }
-
-    30% { 
-      opacity: 1;
-    }
-
-    70% { 
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-      transform: rotate(-360deg);
-    }
+  90% { 
+    opacity: 1;
   }
 
-  @keyframes page-arrival {
-
-    0% { 
-      opacity: .1;
-    }
-
-    90% { 
-      opacity: .1;
-    }
-
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
   }
+}
+
+@keyframes icon {
+
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  30% { 
+    opacity: 1;
+  }
+
+  70% { 
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes page-arrival {
+
+  0% { 
+    opacity: .1;
+  }
+
+  90% { 
+    opacity: .1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 @keyframes menu-arrival {
 
@@ -82,11 +82,11 @@
 @keyframes box-translate {
 
   0% {
-    transform: translateX(436px);
+    transform: scaleX(0);
   }
 
   100% {
-    transform: translateX(336px);
+    transform: scaleX(1);
   }
 }
 
