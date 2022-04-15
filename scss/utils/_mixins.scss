@@ -14,3 +14,23 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+@mixin desktop-only {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop-h5 {
+    @media screen and (min-width: 1200px) {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}

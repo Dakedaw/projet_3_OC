@@ -19,8 +19,11 @@
   90% {
     opacity: 1;
   }
+  99% {
+    transform: rotate(360deg) translateX(0px);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translateX(9999px);
     opacity: 0;
   }
 }
@@ -62,10 +65,10 @@
 }
 @keyframes box-translate {
   0% {
-    transform: scaleX(0);
+    transform: translateX(100px);
   }
   100% {
-    transform: scaleX(1);
+    transform: translateX(1px);
   }
 }
 @keyframes price-translate {
@@ -117,6 +120,11 @@ a {
   color: white;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 25%;
+  }
+}
 .btn:hover {
   background: linear-gradient(356deg, #a16be0 0%, #ff93e1 100%);
   box-shadow: 0px 2px 10px 0px #525252;
@@ -163,6 +171,11 @@ a {
   align-items: center;
   justify-content: center;
 }
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 45%;
+  }
+}
 .header__logo img {
   width: 55%;
 }
@@ -194,14 +207,23 @@ a {
 }
 
 .footer {
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
   background-color: #303030;
   color: white;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 2%;
+  padding-left: 2%;
   margin-top: 80px;
+}
+@media screen and (min-width: 1200px) {
+  .footer {
+    flex-direction: row;
+    column-gap: 70px;
+  }
 }
 .footer__logo {
   font-family: "Shrikhand", cursive;
@@ -214,6 +236,13 @@ a {
   flex-direction: column;
   row-gap: 10px;
   font-weight: bolder;
+}
+@media screen and (min-width: 768px) {
+  .footer__list {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 70px;
+  }
 }
 .footer__list a {
   color: white;
@@ -257,8 +286,26 @@ a {
 .operation {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: 15px;
   margin-bottom: 80px;
+}
+@media screen and (min-width: 1200px) {
+  .operation {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.operation__align {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+@media screen and (min-width: 1200px) {
+  .operation__align {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+  }
 }
 .operation__card {
   display: flex;
@@ -270,22 +317,30 @@ a {
   box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
 }
+@media screen and (min-width: 1200px) {
+  .operation__card {
+    width: 30%;
+    padding-right: 10px;
+  }
+}
 .operation__card__number {
-  width: 6%;
+  min-width: 25px;
   background-color: #9356DC;
-  height: 17px;
-  border-radius: 10px;
+  min-height: 25px;
+  border-radius: 50%;
   color: white;
   text-align: center;
   font-size: x-small;
-  padding-top: 4px;
-  padding-left: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .operation__card__content {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   padding-top: 4px;
 }
 .operation__card__content i {
@@ -310,14 +365,41 @@ a {
   row-gap: 30px;
   margin-bottom: 80px;
 }
+@media screen and (min-width: 1200px) {
+  .restaurant-list {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+}
 .restaurant-list h2 {
   margin-bottom: 0;
+}
+@media screen and (min-width: 1200px) {
+  .restaurant-list__sizing {
+    width: 75%;
+  }
 }
 
 .restaurant {
   display: flex;
   flex-direction: column;
   row-gap: 25px;
+}
+@media screen and (min-width: 1200px) {
+  .restaurant {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 35px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurant a {
+    width: 45%;
+  }
 }
 .restaurant__card {
   display: flex;
@@ -367,11 +449,26 @@ a {
 }
 .restaurant__card__position__like {
   width: 20%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
+@media screen and (min-width: 768px) {
+  .restaurant__card__position__like {
+    width: 15%;
+  }
+}
+.restaurant__card__position__like svg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .restaurant__card__position__like path {
+  width: 100%;
+  height: 100%;
   fill: transparent;
   stroke-width: 5px;
   stroke: #000;
@@ -422,7 +519,16 @@ a {
   align-items: center;
   justify-content: center;
 }
+.menu__title__like svg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .menu__title__like path {
+  width: 100%;
+  height: 100%;
   fill: transparent;
   stroke-width: 5px;
   stroke: #000;
@@ -437,6 +543,19 @@ a {
 .menu__title__like:active path {
   animation: heart-fill 500ms linear both;
 }
+@media screen and (min-width: 1200px) {
+  .menu__name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .menu__name {
+    justify-content: center;
+    align-items: center;
+  }
+}
 .menu__name__starter {
   width: 20%;
   margin-top: 0;
@@ -445,6 +564,13 @@ a {
   font-weight: lighter;
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 5px;
+}
+@media screen and (min-width: 1200px) {
+  .menu__name__starter {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
 }
 .menu__name__dish {
   width: 13%;
@@ -455,6 +581,13 @@ a {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 5px;
 }
+@media screen and (min-width: 1200px) {
+  .menu__name__dish {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+}
 .menu__name__dessert {
   width: 22%;
   margin-top: 40px;
@@ -464,35 +597,58 @@ a {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 5px;
 }
+@media screen and (min-width: 1200px) {
+  .menu__name__dessert {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+}
 .menu__name__course {
   display: flex;
   flex-direction: column;
   row-gap: 15px;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 1200px) {
+  .menu__name__course {
+    width: 100%;
+    flex-direction: row;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .menu__name__course__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   box-shadow: 7px 7px 10px -1px #DCDCDC, -7px 0 10px 1px #DCDCDC;
   border-radius: 20px;
   cursor: pointer;
   position: relative;
 }
-.menu__name__course__card:hover .seasoning p {
+@media screen and (min-width: 1200px) {
+  .menu__name__course__card {
+    width: 32%;
+  }
+}
+.menu__name__course__card:hover .seasoning {
   width: 60%;
 }
-.menu__name__course__card:hover .price {
+.menu__name__course__card:hover span {
   animation: price-translate 500ms both;
 }
-.menu__name__course__card:hover + .check-box {
+.menu__name__course__card:hover .check-box {
   animation: box-translate 500ms both;
-  transform-origin: right;
 }
-.menu__name__course__card:hover + .check-box i {
+.menu__name__course__card:hover .check-box i {
   animation: icon-rotate 500ms;
 }
 .menu__name__course__card h5 {
   margin: 0;
   font-size: 18px;
-  padding-left: 10px;
   padding-top: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -500,10 +656,12 @@ a {
 }
 .menu__name__course__card__seasoning {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding-left: 10px;
+  width: 75%;
 }
 .menu__name__course__card__seasoning p {
+  width: 100%;
   font-weight: 300;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -511,26 +669,32 @@ a {
   margin-top: 8px;
 }
 .menu__name__course__card__seasoning__price {
-  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 35%;
+  overflow: hidden;
 }
 .menu__name__course__card__seasoning__price span {
   font-weight: 600;
-  margin-right: 10px;
+  margin-right: -70px;
+  margin-top: 27px;
   padding-right: 8px;
   font-size: 14px;
 }
 
 .check-box {
-  width: 17%;
-  height: 76px;
+  width: 75px;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
   background-color: #99E2D0;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-top: -75px;
-  margin-left: 335px;
   transform: translateX(9999px);
 }
 .check-box i {
