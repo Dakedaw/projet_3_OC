@@ -6,6 +6,9 @@
     border: none;
     color: white;
     cursor: pointer;
+    @include tablet-only {
+      width: 25%;
+    }
 
     &:hover {
         background: linear-gradient(356deg, lighten($color-primary, 5%) 0%, lighten($color-secondary, 5%) 100%);

@@ -25,8 +25,12 @@
     opacity: 1;
   }
 
+  99% { 
+    transform: rotate(360deg) translateX(0px);
+  }
+
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translateX(9999px);
     opacity: 0;
   }
 }
@@ -82,11 +86,11 @@
 @keyframes box-translate {
 
   0% {
-    transform: scaleX(0);
+    transform: translateX(100px);
   }
 
   100% {
-    transform: scaleX(1);
+    transform: translateX(1px);
   }
 }
 

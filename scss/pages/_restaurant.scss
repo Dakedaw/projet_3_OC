@@ -36,7 +36,17 @@
             align-items: center;
             justify-content: center;
 
+            & svg {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
             & path {
+                width: 100%;
+                height: 100%;
                 fill: transparent;
                 stroke-width: 5px;
                 stroke: #000;
@@ -63,12 +73,22 @@
     }
 
     &__name {
+        @include desktop-only {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            @include desktop-only {
+                justify-content: center;
+                align-items: center;
+            }
+        }
 
         &__starter {
             width: 20%;
             margin-top: 0;
             margin-bottom: 20px;
             @include h4-font;
+            @include desktop-h5;
         }
 
         &__dish {
@@ -76,6 +96,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             @include h4-font;
+            @include desktop-h5;
         }
 
         &__dessert {
@@ -83,6 +104,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             @include h4-font;
+            @include desktop-h5;
         }
 
         &__course {
@@ -90,24 +112,37 @@
             flex-direction: column;
             row-gap: 15px;
             margin-bottom: 40px;
+            @include desktop-only {
+                width: 100%;
+                flex-direction: row;
+                column-gap: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
 
             &__card {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
                 @include card-shadow;
                 border-radius: $card-radius;
                 cursor: pointer;
                 position: relative;
+                @include desktop-only {
+                    width: 32%;
+                }
 
-                &:hover .seasoning p {
+                &:hover .seasoning {
                     width: 60%;
                 }
 
-                &:hover .price {
+                &:hover span {
                     animation: price-translate 500ms both;
                 }
 
-                &:hover + .check-box {
+                &:hover .check-box {
                     animation: box-translate 500ms both;
-                    transform-origin: right;
 
                     & i {
                         animation: icon-rotate 500ms;
@@ -117,28 +152,35 @@
                 & h5 {
                     margin: 0;
                     font-size: 18px;
-                    padding-left: 10px;
                     padding-top: 10px;
                     @include text-ellipsis;
                 }
 
                 &__seasoning {
                     display: flex;
-                    justify-content: space-between;
+                    flex-direction: column ;
                     padding-left: 10px;
+                    width: 75%;
 
                     & p {
+                        width: 100%;
                         font-weight: 300;
                         @include text-ellipsis;
                         margin-top: 8px;
                     }
     
                     &__price {
-                        margin-top: 8px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: end;
+                        align-items: center;
+                        width: 35%;
+                        overflow: hidden;
 
                         & span {
                             font-weight: 600;
-                            margin-right: 10px;
+                            margin-right: -70px;
+                            margin-top: 27px;
                             padding-right: 8px;
                             font-size: 14px;
                         }                        
@@ -150,17 +192,18 @@
 }
 
 .check-box {
-    width: 17%;
-    height: 76px;
+    width: 75px;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
     background-color: $color-tertiary;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-right-radius: $card-radius;
     border-bottom-right-radius: $card-radius;
-    margin-top: -75px;
-    margin-left: 335px;
     transform: translateX(9999px);
+
 
     & i {
         font-size: x-large;
