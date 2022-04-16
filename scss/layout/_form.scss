@@ -15,7 +15,8 @@
     }
 
     &__location {
-        width: 10%;
+        width: 2%;
+        padding-right: 20px;
     }
 
     &__search {
@@ -24,5 +25,8 @@
         font-weight: bolder;
         font-size: 15px;
         border: none;
+        @include tablet-only {
+            width: 25%;
+        }
     }
 }

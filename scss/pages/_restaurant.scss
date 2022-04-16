@@ -77,10 +77,8 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            @include desktop-only {
-                justify-content: center;
-                align-items: center;
-            }
+            justify-content: center;
+            align-items: center;
         }
 
         &__starter {
