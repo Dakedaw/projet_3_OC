@@ -7,6 +7,8 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 70px;
+    background: $card-color;
+    padding-bottom: 50px;
 
     & h2 {
         font-weight: bold;
@@ -53,6 +55,7 @@
         column-gap: 20px;
         @include card-shadow;
         border-radius: $card-radius;
+        background: $card-color;
         @include desktop-only {
             width: 30%;
             padding-right: 10px;
@@ -81,14 +84,7 @@
 
             & i {
                 width: 21px;
-            }
-
-            &__grey {
                 color: gray;
-            }
-
-            &__purple {
-                color: $color-primary;
             }
 
             & p {
@@ -96,6 +92,15 @@
                 margin: 0;
                 padding-left: 25px;
                 font-weight: bolder;
+            }
+        }
+
+        &:hover {
+            background: $card-hover;
+            cursor: pointer;
+
+            & i {
+                color: $color-primary;
             }
         }
     }
